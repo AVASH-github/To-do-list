@@ -14,6 +14,9 @@ const addtask=()=>{
 const deleteTask=(indexToDelete)=>{
     setNewTask(newTask.filter((_, index) => index !== indexToDelete));
 }
+const deleteAllTask=()=>{
+    setNewTask([]);
+}
     return (
         <div className="todo"> 
             <h1>
@@ -25,7 +28,7 @@ const deleteTask=(indexToDelete)=>{
                 <input type="text" placeholder="Enter the Task...." value={task} 
                 onChange={(e)=>setTask(e.target.value)}  className="input" />
                 <button onClick={addtask} className="add-button">ADD</button>
-             
+             <button onClick={deleteAllTask} className="delete-button"> DELETE ALL</button>
               
             
 
