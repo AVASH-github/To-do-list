@@ -28,7 +28,7 @@ const deleteAllTask=()=>{
                 <input type="text" placeholder="Enter the Task...." value={task} 
                 onChange={(e)=>setTask(e.target.value)}  className="input" />
                 <button onClick={addtask} className="add-button">ADD</button>
-             <button onClick={deleteAllTask} className="delete-button"> DELETE ALL</button>
+             <button onClick={deleteAllTask} className="delete-button" > DELETE ALL</button>
               
             
 
