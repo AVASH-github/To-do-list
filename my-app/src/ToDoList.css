@@ -1,0 +1,71 @@
+h1{
+    text-align: center;
+  }
+  .todo{
+    
+    border: 1px solid black;
+      align-items: center;
+  
+  }
+  .divinput{
+   
+    margin: 0px 400px 0px 500px;
+  }
+  .input{
+    text-align: center;
+    font-size: 20px;
+   padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border:2px solid hsl(0, 0%, 80%,0.5);
+  }
+  button{
+    font-size: 15px;
+      color: white;
+      padding : 10px 20px;
+      border-radius: 5px;
+      border:none;
+      cursor: pointer;
+      height: 40px; 
+  }
+  .add-button{
+    background-color: hsl(125, 47%, 54%);
+  }
+  .add-button:hover{
+    background-color: hsl(125, 47%, 44%);
+  }
+  
+  
+  ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin-bottom: 10px;
+  
+  }
+  
+  li {
+    display: flex; /* Arrange items in a row */
+    justify-content: space-between; /* Space between task text and delete button */
+    align-items: center; /* Center items vertically */
+    padding: 10px;
+    border: 3px solid #ccc; /* Add a light border for separation */
+    border-radius: 5px; 
+    margin-bottom: 10px; /* Space between list items */
+    background-color: #f9f9f9; /* Light background color */
+    font-size:25px; /* Make the text easily readable */
+  }
+  
+  .delete-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
