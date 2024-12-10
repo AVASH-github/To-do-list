@@ -37,50 +37,50 @@ ul li a {
   color: hsl(0, 0%, 30%);
 }
 
-h1{
+h1 {
   text-align: center;
 }
-.todo{
-  
-  border: 1px solid black;
-    align-items: center;
 
+.todo {
+  border: 1px solid black;
+  align-items: center;
 }
-.divinput{
- 
+
+.divinput {
   margin: 0px 400px 0px 500px;
 }
-.input{
+
+.input {
   text-align: center;
   font-size: 20px;
- padding: 10px;
+  padding: 10px;
   width: 300px;
   border-radius: 10px;
   margin-right: 20px;
-  border:2px solid hsl(0, 0%, 80%,0.5);
-}
-button{
-  font-size: 15px;
-    color: white;
-    padding : 10px 20px;
-    border-radius: 5px;
-    border:none;
-    cursor: pointer;
-    height: 40px; 
-}
-.add-button{
-  background-color: hsl(125, 47%, 54%);
-}
-.add-button:hover{
-  background-color: hsl(125, 47%, 44%);
+  border: 2px solid hsl(0, 0%, 80%, 0.5);
 }
 
+button {
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+}
+
+.add-button {
+  background-color: hsl(125, 47%, 54%);
+}
+
+.add-button:hover {
+  background-color: hsl(125, 47%, 44%);
+}
 
 ul {
   list-style: none; /* Remove default bullet points */
   padding: 0;
   margin-bottom: 10px;
-
 }
 
 li {
@@ -89,10 +89,10 @@ li {
   align-items: center; /* Center items vertically */
   padding: 10px;
   border: 3px solid #ccc; /* Add a light border for separation */
-  border-radius: 5px; 
+  border-radius: 5px;
   margin-bottom: 10px; /* Space between list items */
   background-color: #f9f9f9; /* Light background color */
-  font-size:25px; /* Make the text easily readable */
+  font-size: 25px; /* Make the text easily readable */
 }
 
 .delete-button {
@@ -103,8 +103,137 @@ li {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+  margin-left: 5px;
 }
 
 .delete-button:hover {
   background-color: #c82333;
+}
+
+/* Media Queries */
+
+/* Small screens (e.g., smartphones) */
+@media (max-width: 600px) {
+  .divinput {
+    margin: 0 20px; /* Reduce margins for small screens */
+  }
+
+  .input {
+    width: 90%; /* Make the input field span most of the screen */
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
+    height: auto; /* Allow height to adjust */
+  }
+
+  li {
+    flex-direction: column; /* Stack task text and button */
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .delete-button {
+    margin-top: 10px; /* Add space between task and button */
+  }
+
+  .divinput >.delete-button {
+    background-color: blueviolet;
+    padding: 7px;
+  }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .divinput {
+    margin: 0 70px; /* Adjust margins for tablets */
+  }
+
+  .input {
+    width: 80%; /* Input field adjusts to tablet size */
+    font-size: 18px;
+  }
+
+  li {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+  .add-button{
+    margin-left: 100px;
+  }
+  .delete-button{
+    margin-top: 5px;
+  }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1025px) {
+  .divinput {
+    margin: 0px 400px 0px 500px; /* Maintain larger margins for desktops */
+  }
+
+  .input {
+    width: 300px; /* Default input width */
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 25px;
+    padding: 10px;
+  }
+
+
+  
+}
+/* General button styles for the square */
+.square {
+  width: 100px; /* Fixed width for consistency */
+  height: 100px; /* Fixed height */
+  margin: 5px; /* Space between buttons */
+  font-size: 24px; /* Font size for the text */
+  font-weight: bold; /* Bold text for clarity */
+  color: #333; /* Text color */
+  background-color: #f9f9f9; /* Light gray background */
+  border: 2px solid #ccc; /* Solid border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove default focus outline */
+  display: inline-flex; /* Align content horizontally and vertically */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  box-sizing: border-box; /* Include padding and border in dimensions */
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Smooth interactions */
+}
+
+/* Highlight the square when hovered */
+.square:hover {
+  background-color: #e6e6e6; /* Slightly darker background on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Change appearance on focus (when clicked or tabbed) */
+.square:focus {
+  outline: none; /* Remove focus outline */
+  background-color: #ddd; /* Slightly darker background */
+}
+
+/* Specific styles for winning squares (if needed) */
+.square.winning-square {
+  background-color: #90ee90; /* Light green background for winning squares */
+  color: #000; /* Darker text for contrast */
+  border-color: #76c776; /* Matching border color */
+}
+
+/* Row styles to align the squares */
+.board-row {
+  display: flex; /* Align squares in a row */
+  justify-content: center; /* Center the row */
+  margin-bottom: 10px; /* Add spacing between rows */
 }

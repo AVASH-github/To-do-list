@@ -1,47 +1,46 @@
 import { useState } from "react";
 
-function ToDoList(){
+function toDoList(){
 
-const [task,setTask]=useState('');
-const [newTask,setNewTask]=useState([]);
 
-const addtask=()=>{
-    if (task.trim()){
-        setNewTask([...newTask,task]);
-        setTask('');
+    const [task,setTask]=useState('');
+    const [newTask,setNewTask]=useState([]);
+
+    const addTask=()=>{
+        if(task.trim){
+            setNewTask([...newTask,task]);
+            setTask('');
+        }
     }
+const delTask=(indexToDelete)=>{
+        setNewTask(newTask.filter((_,index) => index!==indexToDelete));
 }
-const deleteTask=(indexToDelete)=>{
-    setNewTask(newTask.filter((_, index) => index !== indexToDelete));
+
+const delAllTask=()=>{
+    setNewTask([]);
 }
     return (
-        <div className="todo"> 
-            <h1>
-                TO-DO-LIST
-            </h1>
-       
-            <div  className="divinput">
-             
-                <input type="text" placeholder="Enter the Task...." value={task} 
-                onChange={(e)=>setTask(e.target.value)}  className="input" />
-                <button onClick={addtask} className="add-button">ADD</button>
-             
-              
-            
-
-            <ul >
-                {newTask.map((t,index)=>(
-                    <li>{t}
-                    
-                    <button onClick={()=>deleteTask(index)} className="delete-button" >DELETE</button>
-                    </li>
-                ))}
-            </ul>
+      
+        <div>
+        <h1>TO-DO-LIST</h1>
+<div className="divinput">
+            <input type="text" className="input" placeholder="Enter Your Task...." onChange={(e)=>setTask(e.target.value)} value={task}/>
+            <button onClick={addTask} className="add-button">ADD</button>
+            <button onClick={delAllTask} className="delete-button" >DELETE ALL</button>
             </div>
-        </div>
-    );
+       
+       <ul>
+        {newTask.map((t,index)=>(
+        <li>
+            {t}
+            <button onClick={()=>delTask(index)} className="delete-button">DELETE</button>
+        </li>
+        ))}
+       </ul>
 
+        </div>
+        
+    );
 }
 
-
-export default ToDoList;
+export default toDoList;
